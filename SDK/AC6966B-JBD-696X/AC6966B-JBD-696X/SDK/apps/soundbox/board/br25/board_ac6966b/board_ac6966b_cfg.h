@@ -216,7 +216,7 @@
 //*********************************************************************************//
 //                                 iokey 配置                                      //
 //*********************************************************************************//
-#define TCFG_IOKEY_ENABLE					ENABLE_THIS_MOUDLE //是否使能IO按键
+#define TCFG_IOKEY_ENABLE					DISABLE_THIS_MOUDLE //是否使能IO按键
 
 #define TCFG_IOKEY_POWER_CONNECT_WAY		ONE_PORT_TO_LOW    //按键一端接低电平一端接IO
 
@@ -631,7 +631,7 @@ DAC硬件上的连接方式,可选的配置：
 //*********************************************************************************//
 #define TCFG_AUTO_SHUT_DOWN_TIME		    0   //没有蓝牙连接自动关机时间
 #define TCFG_SYS_LVD_EN						1   //电量检测使能
-#define TCFG_POWER_ON_NEED_KEY				1	  //是否需要按按键开机配置
+#define TCFG_POWER_ON_NEED_KEY				0	  //是否需要按按键开机配置
 #define TWFG_APP_POWERON_IGNORE_DEV         4000//上电忽略挂载设备，0时不忽略，非0则n毫秒忽略
 
 #define TCFG_PREVENT_TASK_FILL				1	// 防止task占满cpu
@@ -669,7 +669,7 @@ DAC硬件上的连接方式,可选的配置：
 #define BT_INBAND_RINGTONE                  0   //是否播放手机自带来电铃声
 #define BT_PHONE_NUMBER                     0   //是否播放来电报号
 #define BT_SYNC_PHONE_RING                  1   //是否TWS同步播放来电铃声
-#define BT_SUPPORT_DISPLAY_BAT              1   //是否使能电量显示
+#define BT_SUPPORT_DISPLAY_BAT              0   //是否使能电量显示
 #define BT_SUPPORT_MUSIC_VOL_SYNC           0   //是否使能音量同步
 
 #define TCFG_BLUETOOTH_BACK_MODE			0	//不支持后台模式

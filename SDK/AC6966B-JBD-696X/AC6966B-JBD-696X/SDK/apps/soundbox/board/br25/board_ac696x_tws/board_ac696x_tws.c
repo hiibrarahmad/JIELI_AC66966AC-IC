@@ -745,8 +745,16 @@ void adkey_reuse_enter_callback(u32 ch)//adkey复用，把IO设置为adkey模式
 void uartSendInit();
 extern void alarm_init();
 extern void cfg_file_parse(u8 idx);
+void toggle_led(void)
+{
+    static u8 state = 0;
+    state = !state;
+    gpio_set_output_value(LED_PORT, state);
+}
+
 void board_init()
 {
+        led_gpio_init();
     board_power_init();
     adc_vbg_init();
     adc_init();
@@ -930,3 +938,17 @@ static void board_power_wakeup_init(void)
 }
 early_initcall(board_power_wakeup_init);
 #endif
+
+#include "gpio.h"
+
+#define LED_PORT IO_PORTA_06
+
+static void led_gpio_init(void)
+{
+    gpio_set_direction(LED_PORT, 0);       // Set PA6 as output
+    gpio_set_pull_up(LED_PORT, 0);         // Disable pull-up
+    gpio_set_pull_down(LED_PORT, 0);       // Disable pull-down
+    gpio_set_die(LED_PORT, 1);             // Enable digital input/output
+    gpio_set_output_value(LED_PORT, 0);    // Set LOW initially (LED off)
+}
+

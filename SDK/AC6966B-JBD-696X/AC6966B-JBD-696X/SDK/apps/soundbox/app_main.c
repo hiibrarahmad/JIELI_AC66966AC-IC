@@ -91,6 +91,7 @@ void app_task_loop()
 
 void app_main()
 {
+
     log_info("app_main\n");
 
     app_var.start_time = timer_get_ms();
@@ -116,7 +117,7 @@ void app_main()
     }
 
     user_fun_init();
-    
+
     app_task_loop();
 }
 

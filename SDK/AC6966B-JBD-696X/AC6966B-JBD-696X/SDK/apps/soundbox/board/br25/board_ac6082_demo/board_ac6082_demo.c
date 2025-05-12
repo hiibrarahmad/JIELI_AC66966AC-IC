@@ -200,10 +200,10 @@ struct adc_platform_data adc_data = {
 /*MIC免电容方案需要设置，影响MIC的偏置电压
     21:1.18K	20:1.42K 	19:1.55K 	18:1.99K 	17:2.2K 	16:2.4K 	15:2.6K		14:2.91K	13:3.05K 	12:3.5K 	11:3.73K
 	10:3.91K  	9:4.41K 	8:5.0K  	7:5.6K		6:6K		5:6.5K		4:7K		3:7.6K		2:8.0K		1:8.5K				*/
-    .mic_bias_res   = 16,
+    .mic_bias_res   = 21,
 /*MIC LDO电压档位设置,也会影响MIC的偏置电压
     0:2.3v  1:2.5v  2:2.7v  3:3.0v */
-	.mic_ldo_vsel  = 2,
+	.mic_ldo_vsel  = 3,
 /*MIC电容隔直模式使用内部mic偏置(PA2)*/
 	.mic_bias_inside = 1,
 /*保持内部mic偏置输出*/

@@ -9,7 +9,7 @@
 #ifdef CONFIG_RELEASE_ENABLE
 #define LIB_DEBUG    0
 #else
-#define LIB_DEBUG    1 
+#define LIB_DEBUG    1
 #endif
 
 #define CONFIG_DEBUG_LIB(x)         (x & LIB_DEBUG)
@@ -345,7 +345,7 @@
 //                                 录音配置                                        //
 //*********************************************************************************//
 //录音文件夹名称定义，可以通过修改此处修改录音文件夹名称
-#define REC_FOLDER_NAME				"JBD"
+#define REC_FOLDER_NAME				"ILY"
 
 #endif
 
