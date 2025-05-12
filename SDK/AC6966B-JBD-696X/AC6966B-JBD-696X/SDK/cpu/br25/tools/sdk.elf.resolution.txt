@@ -888,6 +888,7 @@ obj/Release/apps/soundbox/board/br25/board_ac6966b/board_ac6966b.o
 -r=obj/Release/apps/soundbox/board/br25/board_ac6966b/board_ac6966b.o,get_tone_config,pl
 -r=obj/Release/apps/soundbox/board/br25/board_ac6966b/board_ac6966b.o,get_sys_default_vol,pl
 -r=obj/Release/apps/soundbox/board/br25/board_ac6966b/board_ac6966b.o,get_power_on_status,pl
+-r=obj/Release/apps/soundbox/board/br25/board_ac6966b/board_ac6966b.o,gpio_read,l
 -r=obj/Release/apps/soundbox/board/br25/board_ac6966b/board_ac6966b.o,adc_get_value,l
 -r=obj/Release/apps/soundbox/board/br25/board_ac6966b/board_ac6966b.o,adkey_reuse_exit_callback,pl
 -r=obj/Release/apps/soundbox/board/br25/board_ac6966b/board_ac6966b.o,adkey_reuse_enter_callback,pl
@@ -930,6 +931,8 @@ obj/Release/apps/soundbox/board/br25/board_ac6966b/board_ac6966b.o
 -r=obj/Release/apps/soundbox/board/br25/board_ac6966b/board_ac6966b.o,dac_data,pl
 -r=obj/Release/apps/soundbox/board/br25/board_ac6966b/board_ac6966b.o,ladc_list,pl
 -r=obj/Release/apps/soundbox/board/br25/board_ac6966b/board_ac6966b.o,adc_data,pl
+-r=obj/Release/apps/soundbox/board/br25/board_ac6966b/board_ac6966b.o,iokey_list,pl
+-r=obj/Release/apps/soundbox/board/br25/board_ac6966b/board_ac6966b.o,iokey_data,pl
 -r=obj/Release/apps/soundbox/board/br25/board_ac6966b/board_ac6966b.o,adkey_data,pl
 -r=obj/Release/apps/soundbox/board/br25/board_ac6966b/board_ac6966b.o,irkey_data,pl
 -r=obj/Release/apps/soundbox/board/br25/board_ac6966b/board_ac6966b.o,linein_data,pl
@@ -1891,6 +1894,9 @@ obj/Release/apps/soundbox/power_manage/app_power_manage.o
 -r=obj/Release/apps/soundbox/power_manage/app_power_manage.o,power_event_to_user,pl
 -r=obj/Release/apps/soundbox/power_manage/app_power_manage.o,log_print,l
 -r=obj/Release/apps/soundbox/power_manage/app_power_manage.o,tws_sync_bat_level,pl
+-r=obj/Release/apps/soundbox/power_manage/app_power_manage.o,get_self_battery_level,pl
+-r=obj/Release/apps/soundbox/power_manage/app_power_manage.o,get_charge_online_flag,l
+-r=obj/Release/apps/soundbox/power_manage/app_power_manage.o,tws_api_send_data_to_sibling,l
 -r=obj/Release/apps/soundbox/power_manage/app_power_manage.o,sys_event_notify,l
 -r=obj/Release/apps/soundbox/power_manage/app_power_manage.o,app_power_event_handler,pl
 -r=obj/Release/apps/soundbox/power_manage/app_power_manage.o,ui_update_status,l
@@ -1913,7 +1919,6 @@ obj/Release/apps/soundbox/power_manage/app_power_manage.o
 -r=obj/Release/apps/soundbox/power_manage/app_power_manage.o,get_vbat_need_shutdown,pl
 -r=obj/Release/apps/soundbox/power_manage/app_power_manage.o,adc_check_vbat_lowpower,l
 -r=obj/Release/apps/soundbox/power_manage/app_power_manage.o,battery_value_to_phone_level,pl
--r=obj/Release/apps/soundbox/power_manage/app_power_manage.o,get_self_battery_level,pl
 -r=obj/Release/apps/soundbox/power_manage/app_power_manage.o,get_cur_battery_level,pl
 -r=obj/Release/apps/soundbox/power_manage/app_power_manage.o,vbat_check_init,pl
 -r=obj/Release/apps/soundbox/power_manage/app_power_manage.o,sys_timer_add,l
@@ -1928,7 +1933,6 @@ obj/Release/apps/soundbox/power_manage/app_power_manage.o
 -r=obj/Release/apps/soundbox/power_manage/app_power_manage.o,user_dow_sys_vol_10,l
 -r=obj/Release/apps/soundbox/power_manage/app_power_manage.o,user_low_power_show,l
 -r=obj/Release/apps/soundbox/power_manage/app_power_manage.o,app_audio_get_volume,l
--r=obj/Release/apps/soundbox/power_manage/app_power_manage.o,get_charge_online_flag,l
 -r=obj/Release/apps/soundbox/power_manage/app_power_manage.o,vbat_is_low_power,pl
 -r=obj/Release/apps/soundbox/power_manage/app_power_manage.o,check_power_on_voltage,pl
 -r=obj/Release/apps/soundbox/power_manage/app_power_manage.o,clr_wdt,l
@@ -2123,6 +2127,8 @@ obj/Release/apps/soundbox/task_manager/bt/bt.o
 -r=obj/Release/apps/soundbox/task_manager/bt/bt.o,bredr_handle_register,pl
 -r=obj/Release/apps/soundbox/task_manager/bt/bt.o,spp_data_deal_handle_register,l
 -r=obj/Release/apps/soundbox/task_manager/bt/bt.o,spp_data_handler,l
+-r=obj/Release/apps/soundbox/task_manager/bt/bt.o,get_battery_value_register,l
+-r=obj/Release/apps/soundbox/task_manager/bt/bt.o,bt_get_battery_value,l
 -r=obj/Release/apps/soundbox/task_manager/bt/bt.o,bt_fast_test_handle_register,l
 -r=obj/Release/apps/soundbox/task_manager/bt/bt.o,bt_fast_test_api,l
 -r=obj/Release/apps/soundbox/task_manager/bt/bt.o,bt_dut_test_handle_register,l
@@ -15375,5 +15381,4 @@ include_lib/liba/br25/loudness.a.llvm.27900.fft.c
 -r=include_lib/liba/br25/loudness.a.llvm.27900.fft.c,loudness_riflfft_postprocess,pl
 -r=include_lib/liba/br25/loudness.a.llvm.27900.fft.c,loudness_cflfft_Core,pl
 -r=include_lib/liba/br25/loudness.a.llvm.27900.fft.c,loudness_ciflfft_Core,pl
--r=include_lib/liba/br25/loudness.a.llvm.27900.fft.c,loudness_rflfft_wrap,pl
--r=include_lib/liba/br25/loudness.a.llvm.27900.fft.c,loudness_riflfft_wrap,pl
+-r=include_lib/liba/br25/loudness.a.llvm.27900.

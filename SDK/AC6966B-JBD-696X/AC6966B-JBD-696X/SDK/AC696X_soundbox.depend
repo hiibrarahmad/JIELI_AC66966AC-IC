@@ -40850,7 +40850,7 @@
 	"board_ac6965e/user_ac6965e_cfg.h"
 	"board_ac6969d_demo/user_ac6969d_cfg.h"
 
-1746447651 c:\users\hiibr\downloads\jieli_ac66966ac ic\sdk\ac6966b-jbd-696x\ac6966b-jbd-696x\sdk\apps\soundbox\board\br25\board_ac6966b\board_ac6966b_cfg.h
+1747050413 c:\users\hiibr\downloads\jieli_ac66966ac ic\sdk\ac6966b-jbd-696x\ac6966b-jbd-696x\sdk\apps\soundbox\board\br25\board_ac6966b\board_ac6966b_cfg.h
 	"usb_std_class_def.h"
 	"app_config.h"
 
@@ -43410,7 +43410,7 @@
 	"board_config.h"
 	"app_task.h"
 
-1746444948 source:c:\users\hiibr\downloads\jieli_ac66966ac ic\sdk\ac6966b-jbd-696x\ac6966b-jbd-696x\sdk\apps\soundbox\board\br25\board_ac6966b\key_table\iokey_table.c
+1747050192 source:c:\users\hiibr\downloads\jieli_ac66966ac ic\sdk\ac6966b-jbd-696x\ac6966b-jbd-696x\sdk\apps\soundbox\board\br25\board_ac6966b\key_table\iokey_table.c
 	"key_event_deal.h"
 	"key_driver.h"
 	"app_config.h"
