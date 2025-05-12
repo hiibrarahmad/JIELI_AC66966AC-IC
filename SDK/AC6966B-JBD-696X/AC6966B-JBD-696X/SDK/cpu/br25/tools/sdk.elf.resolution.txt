@@ -1910,6 +1910,9 @@ obj/Release/apps/soundbox/power_manage/app_power_manage.o
 -r=obj/Release/apps/soundbox/power_manage/app_power_manage.o,power_event_to_user,pl
 -r=obj/Release/apps/soundbox/power_manage/app_power_manage.o,log_print,l
 -r=obj/Release/apps/soundbox/power_manage/app_power_manage.o,tws_sync_bat_level,pl
+-r=obj/Release/apps/soundbox/power_manage/app_power_manage.o,get_self_battery_level,pl
+-r=obj/Release/apps/soundbox/power_manage/app_power_manage.o,get_charge_online_flag,l
+-r=obj/Release/apps/soundbox/power_manage/app_power_manage.o,tws_api_send_data_to_sibling,l
 -r=obj/Release/apps/soundbox/power_manage/app_power_manage.o,sys_event_notify,l
 -r=obj/Release/apps/soundbox/power_manage/app_power_manage.o,app_power_event_handler,pl
 -r=obj/Release/apps/soundbox/power_manage/app_power_manage.o,ui_update_status,l
@@ -1932,7 +1935,6 @@ obj/Release/apps/soundbox/power_manage/app_power_manage.o
 -r=obj/Release/apps/soundbox/power_manage/app_power_manage.o,get_vbat_need_shutdown,pl
 -r=obj/Release/apps/soundbox/power_manage/app_power_manage.o,adc_check_vbat_lowpower,l
 -r=obj/Release/apps/soundbox/power_manage/app_power_manage.o,battery_value_to_phone_level,pl
--r=obj/Release/apps/soundbox/power_manage/app_power_manage.o,get_self_battery_level,pl
 -r=obj/Release/apps/soundbox/power_manage/app_power_manage.o,get_cur_battery_level,pl
 -r=obj/Release/apps/soundbox/power_manage/app_power_manage.o,vbat_check_init,pl
 -r=obj/Release/apps/soundbox/power_manage/app_power_manage.o,sys_timer_add,l
@@ -1947,7 +1949,6 @@ obj/Release/apps/soundbox/power_manage/app_power_manage.o
 -r=obj/Release/apps/soundbox/power_manage/app_power_manage.o,user_dow_sys_vol_10,l
 -r=obj/Release/apps/soundbox/power_manage/app_power_manage.o,user_low_power_show,l
 -r=obj/Release/apps/soundbox/power_manage/app_power_manage.o,app_audio_get_volume,l
--r=obj/Release/apps/soundbox/power_manage/app_power_manage.o,get_charge_online_flag,l
 -r=obj/Release/apps/soundbox/power_manage/app_power_manage.o,vbat_is_low_power,pl
 -r=obj/Release/apps/soundbox/power_manage/app_power_manage.o,check_power_on_voltage,pl
 -r=obj/Release/apps/soundbox/power_manage/app_power_manage.o,clr_wdt,l
@@ -2143,6 +2144,8 @@ obj/Release/apps/soundbox/task_manager/bt/bt.o
 -r=obj/Release/apps/soundbox/task_manager/bt/bt.o,bredr_handle_register,pl
 -r=obj/Release/apps/soundbox/task_manager/bt/bt.o,spp_data_deal_handle_register,l
 -r=obj/Release/apps/soundbox/task_manager/bt/bt.o,spp_data_handler,l
+-r=obj/Release/apps/soundbox/task_manager/bt/bt.o,get_battery_value_register,l
+-r=obj/Release/apps/soundbox/task_manager/bt/bt.o,bt_get_battery_value,l
 -r=obj/Release/apps/soundbox/task_manager/bt/bt.o,bt_fast_test_handle_register,l
 -r=obj/Release/apps/soundbox/task_manager/bt/bt.o,bt_fast_test_api,l
 -r=obj/Release/apps/soundbox/task_manager/bt/bt.o,bt_dut_test_handle_register,l
