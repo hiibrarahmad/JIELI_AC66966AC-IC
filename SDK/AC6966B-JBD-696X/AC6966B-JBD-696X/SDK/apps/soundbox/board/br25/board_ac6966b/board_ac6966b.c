@@ -165,7 +165,7 @@ CHARGE_PLATFORM_DATA_BEGIN(charge_data)
 	.ldo5v_off_filter		= 0,
 /*ldo5v的10k下拉电阻使能,若充电舱需要更大的负载才能检测到插入时，请将该变量置1,默认值设置为1
   对于充电舱需要按键升压,且维持电压是从充电舱经过上拉电阻到充电口的舱，请将该值改为0*/
-	.ldo5v_pulldown_en		= 0,
+	.ldo5v_pulldown_en		= 1,
 CHARGE_PLATFORM_DATA_END()
 #endif//TCFG_CHARGE_ENABLE
 

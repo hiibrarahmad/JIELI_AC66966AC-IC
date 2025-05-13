@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "app_power_manage.h": "c",
+        "charge.h": "c"
+    }
+}

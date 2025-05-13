@@ -2,7 +2,57 @@
 #define _CONFIG_BOARD_AC6966B_CFG_H_
 
 #ifdef CONFIG_BOARD_AC6966B
+/*///////////////////////////////////////////////////////////////////////////////////////////////////
+#define LED_GPIO_PIN IO_PORTB_06  // LED connected to GPIO pin (IO_PORTB_06)
+gpio_set_direction(LED_GPIO_PIN, GPIO_OUTPUT);  // Set the LED pin as output
+gpio_set_output_value(LED_GPIO_PIN, 0);  // Start with the LED off
 
+
+void handle_charge_event(u8 event) {
+    switch (event) {
+        case CHARGE_EVENT_CHARGE_START:
+            // Charge has started, blink the LED
+            blink_led();
+            break;
+        case CHARGE_EVENT_CHARGE_FULL:
+            // Charging is complete, LED stays on
+            gpio_set_output_value(LED_GPIO_PIN, 1);  // Turn on the LED
+            break;
+        case CHARGE_EVENT_CHARGE_ERR:
+            // Charging error, LED off (or you can indicate error by another pattern)
+            gpio_set_output_value(LED_GPIO_PIN, 0);  // Turn off the LED
+            break;
+        case CHARGE_EVENT_CHARGE_CLOSE:
+        case CHARGE_EVENT_USB_CHARGE_OFF:
+            // No charging, LED off
+            gpio_set_output_value(LED_GPIO_PIN, 0);  // Turn off the LED
+            break;
+        default:
+            break;
+    }
+}
+void blink_led(void) {
+    static int led_state = 0;
+    while (get_charge_online_flag()) {  // Check if charging is still ongoing
+        gpio_set_output_value(LED_GPIO_PIN, led_state);
+        led_state = !led_state;  // Toggle the LED state
+        delay_ms(500);  // Wait for 500ms (adjust as necessary)
+    }
+}
+u8 get_charge_online_flag(void) {
+    // Return 1 if charging is in progress, 0 if charging is off
+    return (charge_state == CHARGE_EVENT_CHARGE_START) ? 1 : 0;
+}
+void main_loop(void) {
+    while (1) {
+        u8 charge_event = get_charge_event();  // Get the current charge event
+        handle_charge_event(charge_event);    // Handle the charge event (charging, full, error)
+        os_time_dly(100);  // Delay to allow for other tasks to run
+    }
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////*/
 #define CONFIG_SDFILE_ENABLE
 #define CONFIG_FLASH_SIZE       (1024 * 1024)
 
@@ -100,7 +150,7 @@
 //                                  充电参数配置                                   //
 //*********************************************************************************//
 //是否支持芯片内置充电
-#define TCFG_CHARGE_ENABLE					0//ENABLE_THIS_MOUDLE
+#define TCFG_CHARGE_ENABLE					ENABLE_THIS_MOUDLE
 //是否支持开机充电
 #define TCFG_CHARGE_POWERON_ENABLE			0//ENABLE
 //是否支持拔出充电自动开机功能
@@ -157,7 +207,7 @@
 #define TCFG_UDISK_ENABLE 0
 #endif
 
-#define TCFG_USB_PORT_CHARGE            DISABLE
+#define TCFG_USB_PORT_CHARGE            ENABLE
 
 #define TCFG_USB_DM_MULTIPLEX_WITH_SD_DAT0       DISABLE
 #if TCFG_USB_DM_MULTIPLEX_WITH_SD_DAT0
@@ -630,7 +680,7 @@ DAC硬件上的连接方式,可选的配置：
 //                                  系统配置                                         //
 //*********************************************************************************//
 #define TCFG_AUTO_SHUT_DOWN_TIME		    0   //没有蓝牙连接自动关机时间
-#define TCFG_SYS_LVD_EN						1   //电量检测使能
+#define TCFG_SYS_LVD_EN						0   //电量检测使能
 #define TCFG_POWER_ON_NEED_KEY				0	  //是否需要按按键开机配置
 #define TWFG_APP_POWERON_IGNORE_DEV         4000//上电忽略挂载设备，0时不忽略，非0则n毫秒忽略
 

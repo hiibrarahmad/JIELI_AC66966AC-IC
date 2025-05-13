@@ -254,6 +254,9 @@ __attribute__((weak)) u8 remap_calculate_vbat_percent(u16 bat_val)
     return 0;
 }
 
+
+
+
 u16 get_vbat_value(void)
 {
     return bat_val;
@@ -262,10 +265,18 @@ u16 get_vbat_value(void)
 u8 get_vbat_percent(void)
 {
     u16 tmp_bat_val;
-    u16 bat_val = get_vbat_level();
+    static u16 prev_bat_val = 0;
+    u16 bat_val = user_get_vbat_level(get_vbat_level());
+
+    // Smooth using simple average (optional)
+    if (prev_bat_val != 0) {
+        bat_val = (bat_val + prev_bat_val) / 2;
+    }
+    prev_bat_val = bat_val;
+
     if (battery_full_value == 0) {
 #if TCFG_CHARGE_ENABLE
-        battery_full_value = (get_charge_full_value() - 100) / 10; //防止部分电池充不了这么高电量，充满显示未满的情况
+        battery_full_value = (get_charge_full_value() - 100) / 10;
 #else
         battery_full_value = 420;
 #endif
@@ -282,8 +293,10 @@ u8 get_vbat_percent(void)
             tmp_bat_val = 100;
         }
     }
+
     return (u8)tmp_bat_val;
 }
+
 
 bool get_vbat_need_shutdown(void)
 {
