@@ -63,14 +63,14 @@ static void user_to_idle_stask(void){
 }
 static void user_ir_power_off(void *priv){
     u32 user_power_timer_ = (u32)priv;
-    
+
     if(tone_get_status() || ((timer_get_ms()-user_power_timer_)<2000)){
-        sys_hi_timeout_add(priv,user_ir_power_off,100);        
+        sys_hi_timeout_add(priv,user_ir_power_off,100);
         return;
     }
 
     user_del_time();
-    sys_hi_timeout_add(priv,user_to_idle_stask,200);    
+    sys_hi_timeout_add(priv,user_to_idle_stask,200);
 }
 u16 user_delay_echo_cm_id = 0;
 static void user_delay_echo_cmd(void *priv){
@@ -101,7 +101,7 @@ static void  common_power_on_tone_play_end_callback(void *priv, int flag)
 
     switch (index) {
     case IDEX_TONE_POWER_OFF:
-        ///提示音播放结束        
+        ///提示音播放结束
         printf(" >>>>> tone \n");
         break;
     default:
@@ -118,7 +118,7 @@ static void  bt_tws_tone_play_end_callback(void *priv, int flag){
 
     switch (index) {
     case IDEX_TONE_DI:
-        ///提示音播放结束        
+        ///提示音播放结束
         printf(" >>>>> tone \n");
 
         if((tws_api_get_tws_state() &TWS_STA_ESCO_OPEN)||
@@ -348,7 +348,7 @@ int app_common_key_msg_deal(struct sys_event *event)
         log_info("COMMON KEY_VOL_DOWN\n");
         if(tone_get_status()){
             break;
-        }        
+        }
         app_audio_volume_down(1);
         printf("common vol-: %d", app_audio_get_volume(APP_AUDIO_STATE_MUSIC));
         {
@@ -356,10 +356,10 @@ int app_common_key_msg_deal(struct sys_event *event)
             data.display_time = 4;
             data.sys_vol_max = app_audio_get_max_volume();
             data.sys_vol = app_audio_get_volume(APP_AUDIO_STATE_MUSIC);
-            
+
             user_rgb_mode_set(USER_RGB_SYS_VOL,&data);
 
-        }        
+        }
 #if (TCFG_DEC2TWS_ENABLE)
         bt_tws_sync_volume();
 #endif
@@ -444,10 +444,10 @@ int app_common_key_msg_deal(struct sys_event *event)
         //     user_low_power_show(kkkk);
         //     break;
         // }
-        
+
         #if USER_IR_POWER
-        if(APP_IDLE_TASK != app_get_curr_task()){            
-            user_power_off_class(2);          
+        if(APP_IDLE_TASK != app_get_curr_task()){
+            user_power_off_class(2);
             user_power_off();
 
             sys_hi_timeout_add((void *)(timer_get_ms()),user_ir_power_off,200);
@@ -575,7 +575,7 @@ int app_power_user_event_handler(struct device_event *dev)
     case POWER_EVENT_POWER_DOW_SYS_VOL:
         puts("POWER_EVENT_POWER_DOW_SYS_VOL\n");
         // user_dow_sys_vol_20();
-        
+
         break;
     case POWER_EVENT_POWER_WARNING:
         puts("POWER_EVENT_POWER_WARNING app common\n");
@@ -600,8 +600,40 @@ static void app_common_device_event_handler(struct sys_event *event)
     switch ((u32)event->arg) {
 #if TCFG_CHARGE_ENABLE
     case DEVICE_EVENT_FROM_CHARGE:
-        app_charge_event_handler(&event->u.dev);
+        {
+    u8 charge_event = event->u.dev.event;
+    log_info("CHARGE EVENT: %d\n", charge_event);
+
+    switch (charge_event) {
+    case CHARGE_EVENT_LDO5V_IN:
+        log_info("🎧 Placed in case — shutting down BT");
+        tone_play_index(IDEX_TONE_POWER_OFF, 1);  // Play shutdown tone
+        sys_timeout_add(NULL, power_set_soft_poweroff, 1500);  // Delay shutdown to allow tone to play (~1.5s)
+         break;
+
+
+    case CHARGE_EVENT_LDO5V_OFF:
+        log_info("🎧 Removed from case — starting BT");
+        bt_init_bredr();
+        user_send_cmd_prepare(USER_CTRL_START_CONNECTION, NULL, 0);  // reconnect
+        tone_play_index(IDEX_TONE_POWER_ON, 1);  // Optional power-on tone
         break;
+
+    case CHARGE_EVENT_CHARGE_START:
+        log_info("🔌 Charging started");
+        break;
+
+    case CHARGE_EVENT_CHARGE_FULL:
+        log_info("🔋 Charging full");
+        break;
+
+    case CHARGE_EVENT_CHARGE_ERR:
+        log_error("⚠️ Charge error");
+        break;
+    }
+
+    break;
+}
 #endif//TCFG_CHARGE_ENABLE
 
 #if TCFG_ONLINE_ENABLE

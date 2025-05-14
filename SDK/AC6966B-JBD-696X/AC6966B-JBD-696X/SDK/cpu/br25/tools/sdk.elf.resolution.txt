@@ -2122,7 +2122,11 @@ obj/Release/apps/soundbox/task_manager/app_common.o
 -r=obj/Release/apps/soundbox/task_manager/app_common.o,app_task_switch_to,l
 -r=obj/Release/apps/soundbox/task_manager/app_common.o,tws_api_get_tws_state,l
 -r=obj/Release/apps/soundbox/task_manager/app_common.o,bt_tws_api_push_cmd,l
--r=obj/Release/apps/soundbox/task_manager/app_common.o,app_charge_event_handler,l
+-r=obj/Release/apps/soundbox/task_manager/app_common.o,tone_play_index,l
+-r=obj/Release/apps/soundbox/task_manager/app_common.o,sys_timeout_add,l
+-r=obj/Release/apps/soundbox/task_manager/app_common.o,power_set_soft_poweroff,l
+-r=obj/Release/apps/soundbox/task_manager/app_common.o,bt_init_bredr,l
+-r=obj/Release/apps/soundbox/task_manager/app_common.o,user_send_cmd_prepare,l
 -r=obj/Release/apps/soundbox/task_manager/app_common.o,dev_status_event_filter,l
 -r=obj/Release/apps/soundbox/task_manager/app_common.o,linein_device_event_handler,l
 -r=obj/Release/apps/soundbox/task_manager/app_common.o,get_charge_online_flag,l

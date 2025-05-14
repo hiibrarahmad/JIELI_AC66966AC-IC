@@ -1,6 +1,9 @@
 {
     "files.associations": {
         "app_power_manage.h": "c",
-        "charge.h": "c"
+        "charge.h": "c",
+        "bluetooth.h": "c",
+        "user_fun_cfg.h": "c",
+        "user_rgb_dev.h": "c"
     }
 }

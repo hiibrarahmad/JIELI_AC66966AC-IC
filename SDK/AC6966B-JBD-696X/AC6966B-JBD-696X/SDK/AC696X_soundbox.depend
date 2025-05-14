@@ -40767,7 +40767,7 @@
 
 1746445031 c:\users\hiibr\downloads\jieli_ac66966ac ic\sdk\ac6966b-jbd-696x\ac6966b-jbd-696x\sdk\include_lib\system\generic\list.h
 
-1746444950 c:\users\hiibr\downloads\jieli_ac66966ac ic\sdk\ac6966b-jbd-696x\ac6966b-jbd-696x\sdk\apps\soundbox\board\br25\user_fun\user_fun_cfg.h
+1747140942 c:\users\hiibr\downloads\jieli_ac66966ac ic\sdk\ac6966b-jbd-696x\ac6966b-jbd-696x\sdk\apps\soundbox\board\br25\user_fun\user_fun_cfg.h
 	"typedef.h"
 	"timer.h"
 	"string.h"
@@ -40850,7 +40850,7 @@
 	"board_ac6965e/user_ac6965e_cfg.h"
 	"board_ac6969d_demo/user_ac6969d_cfg.h"
 
-1747114944 c:\users\hiibr\downloads\jieli_ac66966ac ic\sdk\ac6966b-jbd-696x\ac6966b-jbd-696x\sdk\apps\soundbox\board\br25\board_ac6966b\board_ac6966b_cfg.h
+1747136202 c:\users\hiibr\downloads\jieli_ac66966ac ic\sdk\ac6966b-jbd-696x\ac6966b-jbd-696x\sdk\apps\soundbox\board\br25\board_ac6966b\board_ac6966b_cfg.h
 	"usb_std_class_def.h"
 	"app_config.h"
 
@@ -43216,7 +43216,7 @@
 	"user_fun_cfg.h"
 	"debug.h"
 
-1746444951 c:\users\hiibr\downloads\jieli_ac66966ac ic\sdk\ac6966b-jbd-696x\ac6966b-jbd-696x\sdk\apps\soundbox\include\app_power_manage.h
+1747134589 c:\users\hiibr\downloads\jieli_ac66966ac ic\sdk\ac6966b-jbd-696x\ac6966b-jbd-696x\sdk\apps\soundbox\include\app_power_manage.h
 	"typedef.h"
 	"system/event.h"
 
@@ -43371,7 +43371,7 @@
 	"app_config.h"
 	"app_task.h"
 
-1747051538 source:c:\users\hiibr\downloads\jieli_ac66966ac ic\sdk\ac6966b-jbd-696x\ac6966b-jbd-696x\sdk\apps\soundbox\board\br25\board_ac6966b\board_ac6966b.c
+1747124034 source:c:\users\hiibr\downloads\jieli_ac66966ac ic\sdk\ac6966b-jbd-696x\ac6966b-jbd-696x\sdk\apps\soundbox\board\br25\board_ac6966b\board_ac6966b.c
 	"gpio.h"
 	"app_config.h"
 	"system/includes.h"
@@ -43835,7 +43835,7 @@
 1746444950 source:c:\users\hiibr\downloads\jieli_ac66966ac ic\sdk\ac6966b-jbd-696x\ac6966b-jbd-696x\sdk\apps\soundbox\board\br25\user_fun\user_dev_check.c
 	"user_fun_cfg.h"
 
-1746444950 source:c:\users\hiibr\downloads\jieli_ac66966ac ic\sdk\ac6966b-jbd-696x\ac6966b-jbd-696x\sdk\apps\soundbox\board\br25\user_fun\user_fun.c
+1747140949 source:c:\users\hiibr\downloads\jieli_ac66966ac ic\sdk\ac6966b-jbd-696x\ac6966b-jbd-696x\sdk\apps\soundbox\board\br25\user_fun\user_fun.c
 	"user_fun_cfg.h"
 
 1746444950 source:c:\users\hiibr\downloads\jieli_ac66966ac ic\sdk\ac6966b-jbd-696x\ac6966b-jbd-696x\sdk\apps\soundbox\board\br25\user_fun\user_led.c
@@ -44034,7 +44034,7 @@
 1746444952 c:\users\hiibr\downloads\jieli_ac66966ac ic\sdk\ac6966b-jbd-696x\ac6966b-jbd-696x\sdk\apps\soundbox\include\task_manager\bt\bt_ble.h
 	"typedef.h"
 
-1746444953 source:c:\users\hiibr\downloads\jieli_ac66966ac ic\sdk\ac6966b-jbd-696x\ac6966b-jbd-696x\sdk\apps\soundbox\power_manage\app_power_manage.c
+1747134855 source:c:\users\hiibr\downloads\jieli_ac66966ac ic\sdk\ac6966b-jbd-696x\ac6966b-jbd-696x\sdk\apps\soundbox\power_manage\app_power_manage.c
 	"system/includes.h"
 	"app_power_manage.h"
 	"app_main.h"
@@ -44769,7 +44769,7 @@
 	"btstack/avctp_user.h"
 	"pitchshifter/pitchshifter_api.h"
 
-1746444956 source:c:\users\hiibr\downloads\jieli_ac66966ac ic\sdk\ac6966b-jbd-696x\ac6966b-jbd-696x\sdk\apps\soundbox\task_manager\app_common.c
+1747196346 source:c:\users\hiibr\downloads\jieli_ac66966ac ic\sdk\ac6966b-jbd-696x\ac6966b-jbd-696x\sdk\apps\soundbox\task_manager\app_common.c
 	"common/app_common.h"
 	"app_task.h"
 	"app_main.h"
